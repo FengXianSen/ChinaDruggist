@@ -1,0 +1,63 @@
+//
+//  ChinaDruggist.pch
+//  ChinaDruggist
+//
+//  Created by FengZC on 15/3/15.
+//  Copyright (c) 2015年 FengZC. All rights reserved.
+//
+
+#ifndef ChinaDruggist_ChinaDruggist_pch
+#define ChinaDruggist_ChinaDruggist_pch
+
+#ifdef __OBJC__
+#import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
+#endif
+
+#define Net_key @"e7993ad995c8409e5dbcb18a2ddbd694"
+
+
+#define iphone_addreasKEY  @"60687036f5a141e15cb644744202ccec"
+#define weatherKEY @"4d6f4e3f122447c34c9b117a57eae2f4"
+#define expressKEY @"30f48d4e9d564acc449bcd9470437a46"
+#define ip_addreasKEY @"4686c126c58148cf55d7d9cf8be84d2b"
+
+#define expressPath @"http://a.apix.cn/ppsuda/waybillnoquery/waybillnotrace"
+
+
+
+#define KScreeWidth [UIScreen mainScreen].bounds.size.width
+#define KScreeHeigth [UIScreen mainScreen].bounds.size.height
+
+
+#define SYNTHESIZE_SINGLETON_FOR_CLASS_HEADER(classname) \
+\
++ (classname *)shared##classname;
+
+#define SYNTHESIZE_SINGLETON_FOR_CLASS(classname) \
+\
+static classname *shared##classname = nil; \
+\
++ (classname *)shared##classname \
+{ \
+static dispatch_once_t pred; \
+dispatch_once(&pred, ^{ shared##classname = [[classname alloc] init]; }); \
+return shared##classname; \
+}
+
+
+
+
+#define foot_path @"http://a.apix.cn/yi18/food/list?type=id"
+#define foot_effect(_id) [NSString stringWithFormat:@"http://a.apix.cn/yi18/food/menulist?limit=10&type=id&id=%@",_id]
+#define foot_function(_id) [NSString stringWithFormat:@"http://a.apix.cn/yi18/food/barlist?limit=10&type=id&id=%@",_id]
+
+
+
+#define foot_option(_id) [NSString stringWithFormat:@"http://a.apix.cn/yi18/food/show?id=%@",_id]
+#define foot_function_bar @"http://a.apix.cn/yi18/food/bar"
+#define foot_effect_bar @"http://a.apix.cn/yi18/food/menu"
+#define image_path @"http://www.yi18.net/"
+#define foot_search_path(_id) [NSString stringWithFormat:@"http://a.apix.cn/yi18/food/search?keyword=%@&page=1",_id]
+
+#endif
